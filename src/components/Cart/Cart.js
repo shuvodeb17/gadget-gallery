@@ -2,18 +2,15 @@ import React from 'react';
 
 const Cart = (props) => {
     const {cartOrder} = props;
-    console.log(cartOrder);
 
     let initialValue = 0;
     let shipping = 0;
-    let grandTotal = 0;
     for(const product of cartOrder){
         initialValue+=product.price;
         shipping = shipping + product.shipping;
-        grandTotal = initialValue+shipping;
     }
-    const tax = (initialValue * 10 / 100).toFixed(2);
-
+    const tax = parseFloat((initialValue * 10 / 100).toFixed(2));
+    const grandTotal = (initialValue+shipping+tax);
    
     return (
         <div>
