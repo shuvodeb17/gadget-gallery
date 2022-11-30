@@ -6,12 +6,17 @@
   grid-gap: 14px;
 }
 .left {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 16px;
-    height: 83vh;
-    overflow-x: scroll;
-    margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 16px;
+  height: 83vh;
+  overflow-x: scroll;
+  margin-top: 2rem;
 }
 .right {
+  background: #fee0b7;
+  padding: 0px 11px;
+}
+h4 {
+  text-align: center;
 }
