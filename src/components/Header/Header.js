@@ -1,21 +1,20 @@
 import React from 'react';
-import logo from '../../images/Logo.svg';
-import './Header.css';
+import './Header.css'
 
 const Header = () => {
     return (
         <div className='header'>
-           <div className="container">
-            <div className="child-header">
-            <img src={logo} alt="" />
-            <div className="list">
-                <a href="">Home</a>
-                <a href="">Shop</a>
-                <a href="">Order</a>
-                <a href="">Service</a>
+            <div className="container">
+                <div className="header-child">
+                    <h1>Heels Vila</h1>
+                    <div className="list">
+                        <a href="">Home</a>
+                        <a href="">Services</a>
+                        <a href="">Order</a>
+                        <a href="">Settings</a>
+                    </div>
+                </div>
             </div>
-            </div>
-           </div>
         </div>
     );
 };

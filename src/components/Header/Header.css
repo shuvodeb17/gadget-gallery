@@ -1,27 +1,27 @@
-.header{
-    background-color: #1C2B35;
-    height: 80px;
+.header {
+  background: green;
+  color: #fff;
 }
-.container{
-    width: 1174px;
-    margin: auto;
+.container {
+  width: 1174px;
+  margin: auto;
 }
-.child-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 80px;
+.header-child {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
 }
 .list a {
-    text-decoration: none;
-    color: #fff;
-    padding: 0px 24px;
-    transition: all .3s;
-    -webkit-transition: all .3s;
-    -moz-transition: all .3s;
-    -ms-transition: all .3s;
-    -o-transition: all .3s;
+  padding: 11px;
+  color: #fff;
+  text-decoration: none;
+  transition: all .3s;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
 }
 .list a:hover{
-    color: orange;
+  color: orange;
 }

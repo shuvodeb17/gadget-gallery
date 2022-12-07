@@ -1,0 +1,15 @@
+.offer {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+img.offer-img {
+  width: 100%;
+}
+.offer-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
