@@ -2,7 +2,8 @@ import React from 'react';
 import './DisplayData.css';
 
 const DisplayData = (props) => {
-    // console.log(props.allProducts);
+    // console.log(props);
+    const {button, allProducts} = props;
     const {picture, id, name, price} = props.allProducts;
     return (
         <div className='display-data-wrapper'>
@@ -12,7 +13,7 @@ const DisplayData = (props) => {
                     <p>ID: {id}</p>
                     <p>Name: {name}</p>
                     <p>Price: {price}</p>
-                    <button>Add to cart</button>
+                    <button onClick={() => button(allProducts)}>Add to cart</button>
                 </div>
             </div>
         </div>

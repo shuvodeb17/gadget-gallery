@@ -1,0 +1,21 @@
+.cart-wrapper {
+}
+.cart-child {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  margin-top: 4%;
+  background: #444343;
+  padding: 12px;
+  border-radius: 5px;
+  color: #fff;
+}
+.cart-child img {
+  height: 90px;
+  width: 90px;
+  border-radius: 100%;
+}
+.cart-child .text {
+}
+.cart-child .text p {
+}

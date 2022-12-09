@@ -1,16 +1,24 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
+import Cart from '../Cart/Cart';
 import DisplayData from '../DisplayData/DisplayData';
 import './LoadData.css';
 
 const LoadData = () => {
     // load data
     const [products, setProducts] = useState([]);
+    const [cart, setCart] = useState([]);
     useEffect(() => {
         fetch('data.json')
         .then(res => res.json())
         .then(data => setProducts(data))
     }, [])
+
+    // add to cart button
+    const addToCart = products => {
+            const newCart = [...cart, products];
+            setCart(newCart);
+    }
 
 
     return (
@@ -27,12 +35,16 @@ const LoadData = () => {
                             products.map(product => 
                             <DisplayData 
                                 allProducts={product}
+                                button={addToCart}
                             ></DisplayData>)
                         }
                         </div>
                     </div>
                     <div className="right">
-                        <h3>Order Summary</h3>
+                        <h3>Order Summary {cart.length}</h3>
+                        {
+                            cart.map(carts => <Cart allCarts={carts}></Cart>)
+                        }
                     </div>
                 </div>
             </div>
