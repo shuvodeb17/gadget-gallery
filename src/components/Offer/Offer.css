@@ -1,0 +1,19 @@
+.offer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #be4840;
+  color: #fff;
+  padding: 10px;
+  margin-top: 5%;
+}
+.offer img {
+}
+.offer img {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+}
+.offer-text {
+  padding: 10px;
+}

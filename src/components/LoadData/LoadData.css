@@ -55,3 +55,23 @@ button#ok-btn {
   color: #fff;
   cursor: pointer;
 }
+.offer-btn {
+  background: green;
+  border: none;
+  padding: 10px 30px;
+  color: #fff;
+  border-radius: 5px;
+  width: 100%;
+  cursor: pointer;
+  margin-top: 20%;
+}
+.offer-btn-disabled{
+  background: rgb(175, 185, 175);
+  border: none;
+  padding: 10px 30px;
+  color: #fff;
+  border-radius: 5px;
+  width: 100%;
+  cursor: pointer;
+  margin-top: 20%;
+}

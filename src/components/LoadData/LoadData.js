@@ -2,17 +2,36 @@ import React, { useState } from 'react';
 import { useEffect } from 'react';
 import Cart from '../Cart/Cart';
 import DisplayData from '../DisplayData/DisplayData';
+import Offer from '../Offer/Offer';
 import './LoadData.css';
 
 const LoadData = () => {
     // load data
     const [products, setProducts] = useState([]);
     const [cart, setCart] = useState([]);
+    const [offer, setOffer] = useState(false);
+
     useEffect(() => {
         fetch('data.json')
         .then(res => res.json())
         .then(data => setProducts(data))
     }, [])
+
+
+    // offer btn
+    const offerBtn = () => {
+        const ran = parseInt(Math.random() * cart.length);
+        const newRan = cart[ran];
+        setOffer(newRan);
+        console.log(newRan);
+    }
+    useEffect(() => {
+        if(cart.length>0){
+            setOffer(true);
+        }else{
+            setOffer(false);
+        }
+    }, [cart])
 
     // add to cart button
     const addToCart = products => {
@@ -24,10 +43,22 @@ const LoadData = () => {
                 message.style.display = 'none';
             })
         } else{
-            const newCart = [...cart, products];
-            setCart(newCart);
-        }
+            let addCart = [];
+            const check = cart.find(product => product._id == products._id);
+            if(!check){
+                products.quantity = 1;
+                addCart = [...cart, products];
+                setCart(addCart);
+            }else{
+                const rest = cart.filter(product => product._id != products._id);
+                products.quantity = products.quantity + 1;
+                addCart = [...rest, products];
+                setCart(addCart);
+       }
     }
+    }
+
+
 
 
     return (
@@ -52,7 +83,18 @@ const LoadData = () => {
                     <div className="right">
                         <h3>Order Summary {cart.length}</h3>
                         {
-                            cart.map(carts => <Cart allCarts={carts}></Cart>)
+                            cart.map(carts => 
+                            <Cart 
+                                allCarts={carts}
+                            ></Cart>)
+                        }
+
+                        {/* lottery option */}
+                        <button onClick={offerBtn} disabled={!offer} className={offer ? 'offer-btn' : 'offer-btn-disabled'}>Offer</button>
+                        {
+                            <Offer
+                                lottery={offer}
+                            ></Offer>
                         }
                     </div>
                 </div>
@@ -63,12 +105,11 @@ const LoadData = () => {
             <div className="container">
                 <div className="message-text">
                     <h1>Opps</h1>
-                    <h2>No added products</h2>
+                    <h2>Maximum 4 products add in cart</h2>
                     <button id='ok-btn'>Ok</button>
                 </div>
             </div>
            </div>
-
         </div>
     );
 };
