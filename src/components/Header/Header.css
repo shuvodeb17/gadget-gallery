@@ -1,0 +1,28 @@
+.header-wrapper {
+    background: green;
+    color: #fff;
+}
+.container {
+    width: 1266px;
+    margin: auto;
+}
+.header-child {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+}
+.menu{}
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    transition: all .3s;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+}
+.menu a:hover{
+    color: orange;
+}
