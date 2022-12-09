@@ -18,7 +18,11 @@ const LoadData = () => {
     const addToCart = products => {
         if(cart.length>=4){
             const message = document.getElementById('pop-message');
+            const okBtn = document.getElementById('ok-btn');
             message.style.display = 'block';
+            okBtn.addEventListener('click', () => {
+                message.style.display = 'none';
+            })
         } else{
             const newCart = [...cart, products];
             setCart(newCart);
@@ -60,6 +64,7 @@ const LoadData = () => {
                 <div className="message-text">
                     <h1>Opps</h1>
                     <h2>No added products</h2>
+                    <button id='ok-btn'>Ok</button>
                 </div>
             </div>
            </div>

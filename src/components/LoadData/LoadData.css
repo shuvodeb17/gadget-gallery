@@ -46,3 +46,12 @@
   justify-content: center;
   flex-direction: column;
 }
+button#ok-btn {
+  padding: 10px 30px;
+  border: none;
+  border-radius: 5px;
+  margin: 10px;
+  background: #bb1313;
+  color: #fff;
+  cursor: pointer;
+}
