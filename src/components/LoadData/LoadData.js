@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
+import DisplayData from '../DisplayData/DisplayData';
 import './LoadData.css';
 
 const LoadData = () => {
@@ -20,13 +21,18 @@ const LoadData = () => {
                         <div className="left-text">
                             <h3>Shopping Cart</h3>
                             <h3>{products.length} items</h3>
-                            {
-                                products.map(product => console.log(product))
-                            }
+                        </div>
+                        <div className="left-data-load">
+                        {
+                            products.map(product => 
+                            <DisplayData 
+                                allProducts={product}
+                            ></DisplayData>)
+                        }
                         </div>
                     </div>
                     <div className="right">
-                        <h3>Cart</h3>
+                        <h3>Order Summary</h3>
                     </div>
                 </div>
             </div>
