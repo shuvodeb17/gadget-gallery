@@ -1,4 +1,5 @@
 .load-data-wrapper {
+  position: relative;
 }
 .load-data-child {
   display: grid;
@@ -24,4 +25,24 @@
 .right {
   background: #ddd;
   padding: 11px 13px;
+}
+.popup-message {
+  position: absolute;
+  top: 32%;
+  left: 0;
+  right: 0;
+  display: none;
+}
+.message-text {
+  height: 50vh;
+  width: 50%;
+  background: #607d8b;
+  text-align: center;
+  margin: auto;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  justify-content: center;
+  flex-direction: column;
 }
