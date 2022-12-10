@@ -59,6 +59,12 @@ const LoadData = () => {
     }
 
 
+    // delete btn
+    const deleteBtn = () => {
+        setCart([]);
+    }
+
+
 
 
     return (
@@ -82,6 +88,7 @@ const LoadData = () => {
                     </div>
                     <div className="right">
                         <h3>Order Summary {cart.length}</h3>
+                        <button onClick={deleteBtn} className="delete-btn">Delete</button>
                         {
                             cart.map(carts => 
                             <Cart 
